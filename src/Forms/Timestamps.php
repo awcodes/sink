@@ -23,7 +23,7 @@ class Timestamps
             ->columns([
                 'default' => 1,
                 'sm' => 2,
-                'md' => null
+                'md' => null,
             ]);
     }
 }

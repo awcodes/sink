@@ -4,5 +4,5 @@
 return [
     'password_generator' => [
         'label' => 'Generate',
-    ]
+    ],
 ];

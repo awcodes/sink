@@ -8,18 +8,18 @@ use Filament\Forms\Components\Component;
 
 class FixedWidthSidebar extends Component
 {
-    protected string|int|null $breakpoint = null;
+    protected string | int | null $breakpoint = null;
 
     protected array $columnSpan = [
         'default' => 2,
         'sm' => null,
     ];
 
-    protected array|Closure|null $mainSchema = null;
+    protected array | Closure | null $mainSchema = null;
 
-    protected array|Closure|null $sidebarSchema = null;
+    protected array | Closure | null $sidebarSchema = null;
 
-    protected string|null $sidebarWidth = null;
+    protected ?string $sidebarWidth = null;
 
     protected string $view = 'sink::forms.fixed-width-sidebar';
 
@@ -28,35 +28,35 @@ class FixedWidthSidebar extends Component
         return new static();
     }
 
-    public function breakpoint(string|int $breakpoint): static
+    public function breakpoint(string | int $breakpoint): static
     {
         $this->breakpoint = $breakpoint;
 
         return $this;
     }
 
-    public function mainSchema(array|Closure $schema): static
+    public function mainSchema(array | Closure $schema): static
     {
         $this->mainSchema = $schema;
 
         return $this;
     }
 
-    public function sidebarSchema(array|Closure $schema): static
+    public function sidebarSchema(array | Closure $schema): static
     {
         $this->sidebarSchema = $schema;
 
         return $this;
     }
 
-    public function sidebarWidth(string|int $width): static
+    public function sidebarWidth(string | int $width): static
     {
         $this->sidebarWidth = $width;
 
         return $this;
     }
 
-    public function getBreakpoint(): string|int|null
+    public function getBreakpoint(): string | int | null
     {
         $breakpoint = $this->breakpoint ?? 'lg';
 
@@ -69,7 +69,7 @@ class FixedWidthSidebar extends Component
                 '2xl' => '1536px',
             };
         } elseif (is_int($breakpoint)) {
-            $breakpoint = $breakpoint.'px';
+            $breakpoint = $breakpoint . 'px';
         }
 
         return $breakpoint;
@@ -85,7 +85,7 @@ class FixedWidthSidebar extends Component
         return $this->evaluate($this->sidebarSchema) ?? [];
     }
 
-    public function getSidebarWidth(): string|int|null
+    public function getSidebarWidth(): string | int | null
     {
         return $this->sidebarWidth ?? '20rem';
     }

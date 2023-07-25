@@ -43,8 +43,7 @@ class PasswordGenerator extends TextInput
         bool $numbers = true,
         bool $symbols = true,
         bool $spaces = false
-    ): string
-    {
+    ): string {
         return (new Collection)
             ->when($letters, fn ($c) => $c->merge([
                 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
