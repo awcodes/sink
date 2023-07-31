@@ -16,7 +16,7 @@ use Filament\Forms\Components\ViewField;
 
 class OEmbed extends Fieldset
 {
-    protected array|null $providers = null;
+    protected ?array $providers = null;
 
     protected function setUp(): void
     {
@@ -76,6 +76,7 @@ class OEmbed extends Fieldset
                         if (! $state) {
                             return 0;
                         }
+
                         return Carbon::parse($state)->diffInSeconds('00:00:00');
                     }),
             ])->visible(function (callable $get) {
@@ -126,7 +127,7 @@ class OEmbed extends Fieldset
     {
         return [
             ...$this->providers ?? [],
-            ...[VimeoProvider::class, YoutubeProvider::class]
+            ...[VimeoProvider::class, YoutubeProvider::class],
         ];
     }
 }
