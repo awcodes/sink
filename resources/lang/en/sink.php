@@ -2,7 +2,14 @@
 
 // translations for Awcodes/Sink
 return [
-    'password_generator' => [
-        'label' => 'Generate',
+    'forms' => [
+        'password_generator' => [
+            'label' => 'Generate',
+        ],
     ],
+    'actions' => [
+        'now' => [
+            'label' => 'Now',
+        ],
+    ]
 ];

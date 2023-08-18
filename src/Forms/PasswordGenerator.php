@@ -16,7 +16,7 @@ class PasswordGenerator extends TextInput
     {
         $this->suffixAction(
             Action::make('generatePassword')
-                ->label(__('sink::sink.password_generator.label'))
+                ->label(__('sink::sink.forms.password_generator.label'))
                 ->button()
                 ->color('primary')
                 ->action(function (Set $set) {

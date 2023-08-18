@@ -17,37 +17,53 @@ You can install the package via composer:
 composer require awcodes/sink
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="sink-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="sink-config"
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="sink-views"
-```
-
-This is the contents of the published config file:
+## Fixed Width Sidebar
 
 ```php
-return [
-];
+use Awcodes\Sink\Components\FixedWidthSidebar;
+
+FixedWidthSidebar::make()
+    ->mainSchema(array | Closure $schema)
+    ->sidebarSchema(array | Closure $schema)
+    ->breakpoint(string | int $breakpoint)
+    ->sidebarWidth(string | int $width)
 ```
 
-## Usage
+## Heading
 
 ```php
-$sink = new Awcodes\Sink();
-echo $sink->echoPhrase('Hello, Awcodes!');
+use Awcodes\Sink\Components\Heading;
+
+Heading::make()
+    ->level(string | int $level)
+    ->content(string | Closure $content)
+    ->color(string | array | Closure | null $color);
+```
+
+## Separator (Horizontal Rule)
+
+```php
+use Awcodes\Sink\Components\Separator;
+
+Separator::make()
+    ->color(string | array | Closure | null $color);
+```
+
+## Timestamps
+
+```php
+use Awcodes\Sink\Components\Timestamps;
+
+Timestamps::make();
+```
+
+## Now Action
+
+```php
+use Awcodes\Sink\Components\NowAction;
+
+DatePicker::make('published_at')
+    ->suffixAction(NowAction::make('published_at'));
 ```
 
 ## Testing
