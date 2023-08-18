@@ -2,9 +2,9 @@
 
 namespace Awcodes\Sink\Actions;
 
+use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Set;
-use Filament\Forms\Components\Actions\Action;
 
 class NowAction extends Action
 {

@@ -11,5 +11,5 @@ return [
         'now' => [
             'label' => 'Now',
         ],
-    ]
+    ],
 ];
